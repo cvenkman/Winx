@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>winx</title>
+
+    <style>
+        body {
+            background: #FFC0CB url(https://i.pinimg.com/originals/65/3a/db/653adb2b9863d4303504a435fcec1a88.jpg); /* Фоновый цвет и фоновый рисунок*/
+            color: #000000; /*Цвет текста на странице*/
+            background-attachment: fixed; /* Фон страницы фиксируется */
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+<body>
+hi
+
+<div th:each="fairy : ${allWinx}">
+    <p th:text="${fairy.getName() + ', ' + fairy.getAge()}"></p>
+</div>
+
+<img src="https://4.bp.blogspot.com/-lEGuAatqzmg/VVsgWpSisQI/AAAAAAAAAFw/tSQEaAg3dlQ/s320/The%2BWinx%2B%25287%2529.JPG">
+</body>
+</html>
