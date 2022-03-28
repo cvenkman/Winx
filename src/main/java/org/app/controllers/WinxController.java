@@ -33,7 +33,7 @@ public class WinxController {
     @GetMapping("/{name}")
     public String show(@PathVariable("name") String name,
                        Model model) {
-        model.addAttribute("WinxName", winxDao.show(name));
+        model.addAttribute("fairy", winxDao.show(name));
         return "winx/show";
     }
 
@@ -49,6 +49,29 @@ public class WinxController {
             return "winx/new";
 
         winxDao.save(fairy);
+        return "redirect:/winx";
+    }
+
+    @DeleteMapping("/{name}")
+    public String delete(@PathVariable("name") String name) {
+        winxDao.delete(name);
+        return "redirect:/winx";
+    }
+
+    @GetMapping("/{name}/edit")
+    public String edit(Model model, @PathVariable("name") String name) {
+        model.addAttribute("fairy", winxDao.show(name));
+        return "winx/edit";
+    }
+
+    @PatchMapping("/{name}")
+    public String update(@ModelAttribute("fairy") @Valid Fairy fairy,
+                         BindingResult bindingResult,
+                         @PathVariable("name") String name) {
+        if (bindingResult.hasErrors())
+            return "winx/edit";
+
+        winxDao.update(name, fairy);
         return "redirect:/winx";
     }
 }

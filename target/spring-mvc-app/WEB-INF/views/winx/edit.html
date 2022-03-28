@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>create fairy</title>
+
+    <style>
+        body {
+            background: #FFC0CB url(https://i.pinimg.com/originals/65/3a/db/653adb2b9863d4303504a435fcec1a88.jpg); /* Фоновый цвет и фоновый рисунок*/
+            color: #000000; /*Цвет текста на странице*/
+            background-attachment: fixed; /* Фон страницы фиксируется */
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align: center;">
+<form th:method="PATCH" th:action="@{/winx/{name}(name=${fairy.getName()})}" th:object="${fairy}">
+    <label for="name">Your name:  </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    <br/>
+    <label for="age">Your age:   </label>
+    <input type="text" th:field="*{age}" id="age"/>
+    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
+    <br/>
+    <label for="email">Your powers: </label>
+    <input type="text" th:field="*{powers}" id="email"/>
+    <div style="color:red" th:if="${#fields.hasErrors('powers')}" th:errors="*{powers}">powers Error</div>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+</div>
+</body>
+</html>

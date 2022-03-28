@@ -14,12 +14,36 @@
     </style>
 </head>
 <body>
-hi
 
-<div th:each="fairy : ${allWinx}">
-    <p th:text="${fairy.getName() + ', ' + fairy.getAge()}"></p>
+<div style="text-align: center;">
+    <h2>Winx</h2>
+
+    <h3><a href="/winx/new">New Fairy</a></h3>
+    <table align="center" border="1" cellpadding="5">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Powers</th>
+            <th>Action</th>
+        </tr>
+    <div th:each="fairy : ${allWinx}">
+        <tr>
+            <td><a th:href="@{/winx/{name}(name=${fairy.getName()})}"
+                   th:text="${fairy.getName()}">user</a></a></td>
+
+            <td><p th:text="${fairy.getAge()}"></p></td>
+            <td><p th:text="${fairy.getPowers()}"></p></td>
+            <td>
+                <a th:href="@{/winx/{name}/edit(name=${fairy.getName()})}">Edit</a>
+            </td>
+        </tr>
+    </div>
+    </table>
 </div>
 
+<br/>
+<div style="text-align: center;">
 <img src="https://4.bp.blogspot.com/-lEGuAatqzmg/VVsgWpSisQI/AAAAAAAAAFw/tSQEaAg3dlQ/s320/The%2BWinx%2B%25287%2529.JPG">
+</div>
 </body>
 </html>

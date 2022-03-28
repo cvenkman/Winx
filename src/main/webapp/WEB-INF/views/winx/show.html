@@ -2,10 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>d</title>
+    <title>fairy</title>
+
+    <style>
+        body {
+            background: #FFC0CB url(https://i.pinimg.com/originals/65/3a/db/653adb2b9863d4303504a435fcec1a88.jpg); /* Фоновый цвет и фоновый рисунок*/
+            color: #000000; /*Цвет текста на странице*/
+            background-attachment: fixed; /* Фон страницы фиксируется */
+            background-repeat: repeat;
+        }
+    </style>
 </head>
 <body>
-<p th:text="${'Winx name: ' + WinxName.getName()}"/>
-<img src="../img/bloom.png">
+<div style="text-align: center;">
+<p th:text="${'Name: ' + fairy.getName()}"></p>
+<p th:text="${'Age: ' + fairy.getAge()}"></p>
+<p th:text="${'Powers: ' + fairy.getPowers()}"></p>
+
+<a th:href="@{/winx/{name}/edit(name=${fairy.getName()})}">Edit</a>
+<br/>
+<br/>
+<form th:method="DELETE" th:action="@{/winx/{name}(name=${fairy.getName()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</div>
 </body>
 </html>
