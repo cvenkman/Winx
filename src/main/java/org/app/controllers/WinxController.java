@@ -38,7 +38,7 @@ public class WinxController {
     }
 
     @GetMapping("/new")
-    public String newFairy(@ModelAttribute("fairy") Fairy fairy) {
+    public String newFairy(@ModelAttribute("fairy") Fairy fairy) { // нужна ли тут модель
         return "winx/new";
     }
 
@@ -73,5 +73,15 @@ public class WinxController {
 
         winxDao.update(name, fairy);
         return "redirect:/winx";
+    }
+
+    @GetMapping("/ping-pong")
+    public String newFairy(@ModelAttribute("fairy") Fairy fairy) {// нужна ли тут модель
+        return "games/ping-pong";
+    }
+
+    @GetMapping("/snake")
+    public String newFairy(@ModelAttribute("fairy") Fairy fairy) {// нужна ли тут модель
+        return "games/snakeGame";
     }
 }
