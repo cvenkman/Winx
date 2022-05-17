@@ -26,4 +26,4 @@ src/main/java.ru.spring.mvc/view
 ### controller
 src/main/java.ru.spring.mvc/controllers
 
-[!боже мой это прекрасно](https://github.com/cvenkman/Winx/raw/main/winx.jpeg)
+![боже_мой_это_прекрасно](https://github.com/cvenkman/Winx/raw/main/winx.jpeg)
