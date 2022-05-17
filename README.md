@@ -26,5 +26,4 @@ src/main/java.ru.spring.mvc/view
 ### controller
 src/main/java.ru.spring.mvc/controllers
 
-
-WEB-INF/views/people
+[!боже мой это прекрасно](https://github.com/cvenkman/Winx/raw/master/winx.jpeg)
