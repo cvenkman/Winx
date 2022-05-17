@@ -1,5 +1,12 @@
 # SpringMVC
 
+Сервер работает локально с postgresql, умеет:
+* заносить (localhost:8080/winx/new) записи
+* обновлять (localhost:8080/winx//{name}/edit)
+* удалять (localhost:8080/winx/{name}), запрос приходит на @DeleteMapping.
+
+Есть две браузерные игры - змейка (localhost:8080/winx/snake) и пинг-понг (localhost:8080/winx/ping-pong).
+
 ### Model-View-Controller
 
 Это принцип построения архитектуры большого приложения, при котором оно разбивается на три части.
